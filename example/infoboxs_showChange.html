@@ -1,77 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>infobox show[one/Multiple]</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>html,body{height:100%;}body{padding:0;margin:0;}h1{padding:0;margin:0;font-size:50%;}</style>
 </head>
 <body>
-
-
+    
+    
 <!-- MAP[START] -->
-<h1>Click on the pin. (Select 1 to 3 as the second argument of the function. The result changes.)</h1>
-<div id="myMap" style="width:100vw;height:100vh;"></div>
+<h1>infobox show[one/Multiple]</h1>
+<div id="myMap" style='width:100%;height:97%;'></div>
 <!-- MAP[END] -->
 
 
-<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[ *** YOUR MY KEY *** ]' async defer></script>
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[  *** Your BingMapsAPI key. *** ]' async defer></script>
 <script src="../js/BmapQuery.js"></script>
 <script>
-    //init
-    function GetMap() {
-        //------------------------------------------------------------------------
-        //1. Instance
-        //------------------------------------------------------------------------
-        const map = new Bmap("#myMap");
-        //------------------------------------------------------------------------
-        //2. Display Map
-        //------------------------------------------------------------------------
-        map.startMap(35.039500, 135.728500, "load", 10);
+//****************************************************************************************
+// BingMaps&BmapQuery
+//****************************************************************************************
+//Init
+function GetMap(){
 
-        //----------------------------------------------------
-        //3. Infobox
-        //   options = new Array();
-        //   options[index] = { lat, lon, width, height, title, pinColor, description, show };
-        //----------------------------------------------------
-        const options = [];
-        options[0]={
-            "lat":34.889294,
-            "lon":135.807693,
-            "title":"KYOTO",
-            "pinColor":"#ff0000",
-            "height":300,
-            "width":320,
-            "description": 'Byoudouin<br><img src="../img/byoudouin.jpg" width="300">',
-            "show":false
-        };
-        options[1]={
-            "lat":35.039500,
-            "lon":135.728500,
-            "title":"KYOTO",
-            "pinColor":"#ff0000",
-            "height":300,
-            "width":320,
-            "description": 'Kinkakuji<br><img src="../img/kinkakuji.jpg" width="300">',
-            "show":false
-        };
-        options[2]={
-            "lat":35.026852,
-            "lon":135.798248,
-            "title":"KYOTO",
-            "pinColor":"#ff0000",
-            "height":300,
-            "width":320,
-            "description": 'Ginkakuji<br><img src="../img/ginkakuji.jpg" width="300">',
-            "show":false
-        };
+    //------------------------------------------------------------------------
+    //1. Instance
+    //------------------------------------------------------------------------
+    const map = new Bmap("#myMap");
 
-        //----------------------------------------------------
-        //4. Switch infoboxs
-        //   infoboxLayers(options, true); //true=one, false=Multiple
-        //----------------------------------------------------
-        map.infoboxLayers(options,true);
+    //------------------------------------------------------------------------
+    //2. Display Map
+    //------------------------------------------------------------------------
+    map.startMap(35.039500, 135.728500, "load", 10);
 
-    }
+    //----------------------------------------------------
+    //3. Infobox
+    //   options = new Array();
+    //   options[index] = { lat, lon, width, height, title, pinColor, description };
+    //----------------------------------------------------
+    const options = [];
+    options[0]={
+        "lat":35.440388,
+        "lon": 139.649734,
+        "title":"YOKOMA MOTOMACHI ",
+        "pinColor":"#800080",
+        "height":300,
+        "width":320,
+        "description": 'Byoudouin<br><img src="../img/byoudouin.jpg" width="300">',
+        "show":false
+    };
+    options[1]={
+        "lat":35.451763,
+        "lon": 139.647751,
+        "title":"YOKOHAMA OOSANBASHI",
+        "pinColor":"#000080",
+        "height":300,
+        "width":320,
+        "description": 'Kinkakuji<br><img src="../img/kinkakuji.jpg" width="300">',
+        "show":false
+    };
+    options[2]={
+        "lat":35.442810,
+        "lon": 139.645900,
+        "title":"YOKOHAMA CHUKAGAI",
+        "pinColor":"#008000",
+        "height":300,
+        "width":320,
+        "description": 'Ginkakuji<br><img src="../img/ginkakuji.jpg" width="300">',
+        "show":false
+        
+         options[3]={
+        "lat":35.443890,
+        "lon": 139.650800,
+        "title":"YOKOHAMA MARINTOWER",
+        "pinColor":"#ff1493",
+        "height":300,
+        "width":320,
+        "description": 'Ginkakuji<br><img src="../img/ginkakuji.jpg" width="300">',
+        "show":false
+        
+         options[4]={
+        "lat":35.452170,
+        "lon": 139.642900,
+        "title":"YOKOHAMA AKARENGA",
+        "pinColor":"#696969",
+        "height":300,
+        "width":320,
+        "description": 'Ginkakuji<br><img src="../img/ginkakuji.jpg" width="300">',
+        "show":false
+        
+  
+    };
+    //----------------------------------------------------
+    //4. Switch infoboxs
+    //   infoboxLayers(options, true); //true=one, false=Multiple
+    //----------------------------------------------------
+    map.infoboxLayers(options,true);
+
+}
 </script>
+
 </body>
 </html>
